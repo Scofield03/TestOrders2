@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DBProductionDataSet" targetNamespace="http://tempuri.org/DBProductionDataSet.xsd" xmlns:mstns="http://tempuri.org/DBProductionDataSet.xsd" xmlns="http://tempuri.org/DBProductionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DBProductionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBProductionConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TestOrders2.Properties.Settings.GlobalReference.Default.DBProductionConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderListTableAdapter" GeneratorDataComponentClassName="OrderListTableAdapter" Name="OrderList" UserDataComponentName="OrderListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.OrderList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.OrderList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер заказа" DataSetColumn="Номер заказа" />
+              <Mapping SourceColumn="Дата заказа" DataSetColumn="Дата заказа" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
+              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
+              <Mapping SourceColumn="Кол-во" DataSetColumn="Кол-во" />
+              <Mapping SourceColumn="ID_Order" DataSetColumn="ID_Order" />
+              <Mapping SourceColumn="Наименование" DataSetColumn="Наименование" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProdsInAllAreasTableAdapter" GeneratorDataComponentClassName="ProdsInAllAreasTableAdapter" Name="ProdsInAllAreas" UserDataComponentName="ProdsInAllAreasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.ProdsInAllAreas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            ProdsInAllAreas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="п/п" DataSetColumn="п/п" />
+              <Mapping SourceColumn="Номенклатура" DataSetColumn="Номенклатура" />
+              <Mapping SourceColumn="Комплект" DataSetColumn="Комплект" />
+              <Mapping SourceColumn="Срок" DataSetColumn="Срок" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProdListTableAdapter" GeneratorDataComponentClassName="ProdListTableAdapter" Name="ProdList" UserDataComponentName="ProdListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.ProdList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ID, Name + (CASE WHEN isKit = 'true' THEN '|1' ELSE '|0' END) AS Name, Name AS Name2, 
+case when isKit='true' then 'ДА' else 'НЕТ' end as isKit
+FROM            ProdList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Name2" DataSetColumn="Name2" />
+              <Mapping SourceColumn="isKit" DataSetColumn="isKit" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StatusesTableAdapter" GeneratorDataComponentClassName="StatusesTableAdapter" Name="Statuses" UserDataComponentName="StatusesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.Statuses" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Statuses] WHERE (([ID] = @Original_ID) AND ([Status] = @Original_Status))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Statuses] ([Status]) VALUES (@Status);
+SELECT ID, Status FROM Statuses WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Statuses.*
+FROM            Statuses</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Statuses] SET [Status] = @Status WHERE (([ID] = @Original_ID) AND ([Status] = @Original_Status));
+SELECT ID, Status FROM Statuses WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="DBProduction.dbo.Statuses" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WhatInStockTableAdapter" GeneratorDataComponentClassName="WhatInStockTableAdapter" Name="WhatInStock" UserDataComponentName="WhatInStockTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.WhatInStock" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      *
+FROM            WhatInStock</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="п/п" DataSetColumn="п/п" />
+              <Mapping SourceColumn="Номенклатура" DataSetColumn="Номенклатура" />
+              <Mapping SourceColumn="Комплект" DataSetColumn="Комплект" />
+              <Mapping SourceColumn="Кол-во" DataSetColumn="Кол-во" />
+              <Mapping SourceColumn="Срок" DataSetColumn="Срок" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderList1TableAdapter" GeneratorDataComponentClassName="OrderList1TableAdapter" Name="OrderList1" UserDataComponentName="OrderList1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.OrderList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from OrderList where [Статус] in ('В работе','Новый','Частично зарезервирован',
+'Зарезервирован')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Номер заказа" DataSetColumn="Номер заказа" />
+              <Mapping SourceColumn="Дата заказа" DataSetColumn="Дата заказа" />
+              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
+              <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
+              <Mapping SourceColumn="Кол-во" DataSetColumn="Кол-во" />
+              <Mapping SourceColumn="ID_Order" DataSetColumn="ID_Order" />
+              <Mapping SourceColumn="Наименование" DataSetColumn="Наименование" />
+              <Mapping SourceColumn="Is_Kit" DataSetColumn="Is_Kit" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WhatInStock1TableAdapter" GeneratorDataComponentClassName="WhatInStock1TableAdapter" Name="WhatInStock1" UserDataComponentName="WhatInStock1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBProductionConnectionString (Settings)" DbObjectName="DBProduction.dbo.WhatInStock" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT      *
+FROM            WhatInStock</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="п/п" DataSetColumn="п/п" />
+              <Mapping SourceColumn="Номенклатура" DataSetColumn="Номенклатура" />
+              <Mapping SourceColumn="Комплект" DataSetColumn="Комплект" />
+              <Mapping SourceColumn="Кол-во" DataSetColumn="Кол-во" />
+              <Mapping SourceColumn="Срок" DataSetColumn="Срок" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DBProductionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DBProductionDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DBProductionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OrderList" msprop:Generator_RowEvHandlerName="OrderListRowChangeEventHandler" msprop:Generator_RowDeletedName="OrderListRowDeleted" msprop:Generator_RowDeletingName="OrderListRowDeleting" msprop:Generator_RowEvArgName="OrderListRowChangeEvent" msprop:Generator_TablePropName="OrderList" msprop:Generator_RowChangedName="OrderListRowChanged" msprop:Generator_UserTableName="OrderList" msprop:Generator_RowChangingName="OrderListRowChanging" msprop:Generator_RowClassName="OrderListRow" msprop:Generator_TableClassName="OrderListDataTable" msprop:Generator_TableVarName="tableOrderList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_x0020_заказа" msprop:Generator_ColumnPropNameInTable="Номер_заказаColumn" msprop:Generator_ColumnPropNameInRow="Номер_заказа" msprop:Generator_UserColumnName="Номер заказа" msprop:Generator_ColumnVarNameInTable="columnНомер_заказа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_заказа" msprop:Generator_ColumnPropNameInTable="Дата_заказаColumn" msprop:Generator_ColumnPropNameInRow="Дата_заказа" msprop:Generator_UserColumnName="Дата заказа" msprop:Generator_ColumnVarNameInTable="columnДата_заказа" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_UserColumnName="Тип" msprop:Generator_ColumnVarNameInTable="columnТип" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Кол-во" msprop:Generator_ColumnPropNameInTable="_Кол_воColumn" msprop:Generator_ColumnPropNameInRow="_Кол_во" msprop:Generator_UserColumnName="Кол-во" msprop:Generator_ColumnVarNameInTable="_columnКол_во" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Order" msprop:Generator_ColumnPropNameInTable="ID_OrderColumn" msprop:Generator_ColumnPropNameInRow="ID_Order" msprop:Generator_UserColumnName="ID_Order" msprop:Generator_ColumnVarNameInTable="columnID_Order" type="xs:int" />
+              <xs:element name="Наименование" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_ColumnVarNameInTable="columnНаименование" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProdsInAllAreas" msprop:Generator_RowEvHandlerName="ProdsInAllAreasRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdsInAllAreasRowDeleted" msprop:Generator_RowDeletingName="ProdsInAllAreasRowDeleting" msprop:Generator_RowEvArgName="ProdsInAllAreasRowChangeEvent" msprop:Generator_TablePropName="ProdsInAllAreas" msprop:Generator_RowChangedName="ProdsInAllAreasRowChanged" msprop:Generator_UserTableName="ProdsInAllAreas" msprop:Generator_RowChangingName="ProdsInAllAreasRowChanging" msprop:Generator_RowClassName="ProdsInAllAreasRow" msprop:Generator_TableClassName="ProdsInAllAreasDataTable" msprop:Generator_TableVarName="tableProdsInAllAreas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="п_x002F_п" msprop:Generator_ColumnPropNameInTable="_п_пColumn" msprop:Generator_ColumnPropNameInRow="_п_п" msprop:Generator_UserColumnName="п/п" msprop:Generator_ColumnVarNameInTable="_columnп_п" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номенклатура" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="НоменклатураColumn" msprop:Generator_ColumnPropNameInRow="Номенклатура" msprop:Generator_UserColumnName="Номенклатура" msprop:Generator_ColumnVarNameInTable="columnНоменклатура" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Комплект" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="КомплектColumn" msprop:Generator_ColumnPropNameInRow="Комплект" msprop:Generator_UserColumnName="Комплект" msprop:Generator_ColumnVarNameInTable="columnКомплект" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Срок" msprop:Generator_ColumnPropNameInTable="СрокColumn" msprop:Generator_ColumnPropNameInRow="Срок" msprop:Generator_UserColumnName="Срок" msprop:Generator_ColumnVarNameInTable="columnСрок" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProdList" msprop:Generator_RowEvHandlerName="ProdListRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdListRowDeleted" msprop:Generator_RowDeletingName="ProdListRowDeleting" msprop:Generator_RowEvArgName="ProdListRowChangeEvent" msprop:Generator_TablePropName="ProdList" msprop:Generator_RowChangedName="ProdListRowChanged" msprop:Generator_UserTableName="ProdList" msprop:Generator_RowChangingName="ProdListRowChanging" msprop:Generator_RowClassName="ProdListRow" msprop:Generator_TableClassName="ProdListDataTable" msprop:Generator_TableVarName="tableProdList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="230" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name2" msprop:Generator_ColumnPropNameInTable="Name2Column" msprop:Generator_ColumnPropNameInRow="Name2" msprop:Generator_UserColumnName="Name2" msprop:Generator_ColumnVarNameInTable="columnName2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isKit" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="isKitColumn" msprop:Generator_ColumnPropNameInRow="isKit" msprop:Generator_UserColumnName="isKit" msprop:Generator_ColumnVarNameInTable="columnisKit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Statuses" msprop:Generator_RowEvHandlerName="StatusesRowChangeEventHandler" msprop:Generator_RowDeletedName="StatusesRowDeleted" msprop:Generator_RowDeletingName="StatusesRowDeleting" msprop:Generator_RowEvArgName="StatusesRowChangeEvent" msprop:Generator_TablePropName="Statuses" msprop:Generator_RowChangedName="StatusesRowChanged" msprop:Generator_UserTableName="Statuses" msprop:Generator_RowChangingName="StatusesRowChanging" msprop:Generator_RowClassName="StatusesRow" msprop:Generator_TableClassName="StatusesDataTable" msprop:Generator_TableVarName="tableStatuses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WhatInStock" msprop:Generator_RowClassName="WhatInStockRow" msprop:Generator_RowEvHandlerName="WhatInStockRowChangeEventHandler" msprop:Generator_RowDeletedName="WhatInStockRowDeleted" msprop:Generator_RowDeletingName="WhatInStockRowDeleting" msprop:Generator_RowEvArgName="WhatInStockRowChangeEvent" msprop:Generator_TablePropName="WhatInStock" msprop:Generator_RowChangedName="WhatInStockRowChanged" msprop:Generator_UserTableName="WhatInStock" msprop:Generator_RowChangingName="WhatInStockRowChanging" msprop:Generator_TableClassName="WhatInStockDataTable" msprop:Generator_TableVarName="tableWhatInStock">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="п_x002F_п" msprop:Generator_UserColumnName="п/п" msprop:Generator_ColumnPropNameInTable="_п_пColumn" msprop:Generator_ColumnPropNameInRow="_п_п" msprop:Generator_ColumnVarNameInTable="_columnп_п" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номенклатура" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Номенклатура" msprop:Generator_ColumnPropNameInTable="НоменклатураColumn" msprop:Generator_ColumnPropNameInRow="Номенклатура" msprop:Generator_ColumnVarNameInTable="columnНоменклатура" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Комплект" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Комплект" msprop:Generator_ColumnPropNameInTable="КомплектColumn" msprop:Generator_ColumnPropNameInRow="Комплект" msprop:Generator_ColumnVarNameInTable="columnКомплект" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Кол-во" msprop:Generator_UserColumnName="Кол-во" msprop:Generator_ColumnPropNameInTable="_Кол_воColumn" msprop:Generator_ColumnPropNameInRow="_Кол_во" msprop:Generator_ColumnVarNameInTable="_columnКол_во" type="xs:int" minOccurs="0" />
+              <xs:element name="Срок" msprop:Generator_UserColumnName="Срок" msprop:Generator_ColumnPropNameInTable="СрокColumn" msprop:Generator_ColumnPropNameInRow="Срок" msprop:Generator_ColumnVarNameInTable="columnСрок" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderList1" msprop:Generator_RowClassName="OrderList1Row" msprop:Generator_RowEvHandlerName="OrderList1RowChangeEventHandler" msprop:Generator_RowDeletedName="OrderList1RowDeleted" msprop:Generator_RowDeletingName="OrderList1RowDeleting" msprop:Generator_RowEvArgName="OrderList1RowChangeEvent" msprop:Generator_TablePropName="OrderList1" msprop:Generator_RowChangedName="OrderList1RowChanged" msprop:Generator_UserTableName="OrderList1" msprop:Generator_RowChangingName="OrderList1RowChanging" msprop:Generator_TableClassName="OrderList1DataTable" msprop:Generator_TableVarName="tableOrderList1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Номер_x0020_заказа" msprop:Generator_UserColumnName="Номер заказа" msprop:Generator_ColumnPropNameInTable="Номер_заказаColumn" msprop:Generator_ColumnPropNameInRow="Номер_заказа" msprop:Generator_ColumnVarNameInTable="columnНомер_заказа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_заказа" msprop:Generator_UserColumnName="Дата заказа" msprop:Generator_ColumnPropNameInTable="Дата_заказаColumn" msprop:Generator_ColumnPropNameInRow="Дата_заказа" msprop:Generator_ColumnVarNameInTable="columnДата_заказа" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Статус" msprop:Generator_UserColumnName="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Тип" msprop:Generator_ColumnPropNameInTable="ТипColumn" msprop:Generator_ColumnPropNameInRow="Тип" msprop:Generator_ColumnVarNameInTable="columnТип" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Кол-во" msprop:Generator_UserColumnName="Кол-во" msprop:Generator_ColumnPropNameInTable="_Кол_воColumn" msprop:Generator_ColumnPropNameInRow="_Кол_во" msprop:Generator_ColumnVarNameInTable="_columnКол_во" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Order" msprop:Generator_UserColumnName="ID_Order" msprop:Generator_ColumnPropNameInTable="ID_OrderColumn" msprop:Generator_ColumnPropNameInRow="ID_Order" msprop:Generator_ColumnVarNameInTable="columnID_Order" type="xs:int" />
+              <xs:element name="Наименование" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_ColumnVarNameInTable="columnНаименование" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Is_Kit" msprop:Generator_UserColumnName="Is_Kit" msprop:Generator_ColumnPropNameInTable="Is_KitColumn" msprop:Generator_ColumnPropNameInRow="Is_Kit" msprop:Generator_ColumnVarNameInTable="columnIs_Kit" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WhatInStock1" msprop:Generator_RowClassName="WhatInStock1Row" msprop:Generator_RowEvHandlerName="WhatInStock1RowChangeEventHandler" msprop:Generator_RowDeletedName="WhatInStock1RowDeleted" msprop:Generator_RowDeletingName="WhatInStock1RowDeleting" msprop:Generator_RowEvArgName="WhatInStock1RowChangeEvent" msprop:Generator_TablePropName="WhatInStock1" msprop:Generator_RowChangedName="WhatInStock1RowChanged" msprop:Generator_UserTableName="WhatInStock1" msprop:Generator_RowChangingName="WhatInStock1RowChanging" msprop:Generator_TableClassName="WhatInStock1DataTable" msprop:Generator_TableVarName="tableWhatInStock1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="п_x002F_п" msprop:Generator_UserColumnName="п/п" msprop:Generator_ColumnPropNameInTable="_п_пColumn" msprop:Generator_ColumnPropNameInRow="_п_п" msprop:Generator_ColumnVarNameInTable="_columnп_п" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Номенклатура" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Номенклатура" msprop:Generator_ColumnPropNameInTable="НоменклатураColumn" msprop:Generator_ColumnPropNameInRow="Номенклатура" msprop:Generator_ColumnVarNameInTable="columnНоменклатура" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Комплект" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Комплект" msprop:Generator_ColumnPropNameInTable="КомплектColumn" msprop:Generator_ColumnPropNameInRow="Комплект" msprop:Generator_ColumnVarNameInTable="columnКомплект" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Кол-во" msprop:Generator_UserColumnName="Кол-во" msprop:Generator_ColumnPropNameInTable="_Кол_воColumn" msprop:Generator_ColumnPropNameInRow="_Кол_во" msprop:Generator_ColumnVarNameInTable="_columnКол_во" type="xs:int" minOccurs="0" />
+              <xs:element name="Срок" msprop:Generator_UserColumnName="Срок" msprop:Generator_ColumnPropNameInTable="СрокColumn" msprop:Generator_ColumnPropNameInRow="Срок" msprop:Generator_ColumnVarNameInTable="columnСрок" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Statuses" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
